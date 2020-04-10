@@ -29,8 +29,41 @@
         res.sendFile(__dirname + "/fail.html");
     }else{
        
+        const fname = req.body.fname;
+        const lname = req.body.lname;
+        const email = req.body.email;
 
+        const data = {
+            members: [
+                {
+                    email_address: email,
+                    status: "subscribed",
+                    merge_fields:{
+                        FNAME: fname,
+                        LNAME: lname
+                    }
+
+                }
+            ]
+           
+        }
+        const jsonData = JSON.stringify(data);
         
+        const url = 'https://us19.api.mailchimp.com/3.0/lists/d076a16607';
+        const options = {
+            method: "POST",
+            auth: "kizito:86fd188dee0ca6a1a513d2d945f544ac-us19"
+        }
+        // '86fd188dee0ca6a1a513d2d945f544ac-us19/d076a16607'
+
+       const request = https.request(url, options, function(response){
+            response.on("data", function(d){
+                console.log(JSON.parse(d));
+            })
+        })
+
+        request.write(jsonData);
+        request.end();
     }
 
      
