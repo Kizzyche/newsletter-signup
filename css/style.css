@@ -1,0 +1,119 @@
+body{
+  
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+  
+}
+
+.container{
+    text-align: center;
+    width: 30%;
+    height: 40em;
+    margin: 10em auto;
+    background-color: #2B376B;
+    padding: 2em;
+}
+
+h1{
+    margin-bottom: 1em;
+    font-family: 'Righteous', cursive;
+    font-size: 2.5em;
+    color: #ADADAD;
+
+}
+
+input{
+    
+    display: block;
+    width: 40%;
+    height: 3em;
+    font-size: 1.2em;
+    margin:auto;
+    padding-left: 1em;
+    background-color: transparent;
+    color: aliceblue;
+    border: 0;
+    border-bottom: 2px #ADADAD solid;
+
+}
+
+button:hover{
+
+    background-color: transparent;
+    border: none;
+    
+}
+
+.sign-up-btn{
+    font-size: 1em;
+    padding: 1.2em 2em;
+    margin: 1em 0em;
+    background-color: #ADADAD;
+    border-radius: 8px;
+    color: #fff;
+    text-shadow: 2px;
+}
+
+.fail-container{
+    background-image: url("../img/image1.jpg");
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fail{
+    margin: 10em 0em 0em 10em;
+}
+
+p{
+    line-height: 2em;
+}
+
+.try-button{
+    font-size: 1em;
+    padding: 1.2em 2em;
+    margin: 1em 0em;
+    background-color: #ADADAD;
+    border-radius: 8px;
+    color: #fff;
+    text-shadow: 2px;
+}
+
+.success-container{
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/image2.jpg");
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.success{
+    margin: 10em 30em 0em 10em;
+    position: relative;
+    z-index: 2;
+   
+
+}
+
+.success h1{
+    color: white;
+    font-size: 2.5em
+}
+.success p{
+    color: white;
+    font-size: 1.5em;
+}
+
+.opaque{
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.384);
+    margin: 0;
+
+}
+
