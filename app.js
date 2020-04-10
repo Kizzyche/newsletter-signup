@@ -57,6 +57,12 @@
         // '86fd188dee0ca6a1a513d2d945f544ac-us19/d076a16607'
 
        const request = https.request(url, options, function(response){
+           if(response.statusCode === 200){
+               res.sendFile(__dirname + "/success.html");
+           }else{
+               res.sendFile(__dirname + "/fail.html");
+           }
+
             response.on("data", function(d){
                 console.log(JSON.parse(d));
             })
