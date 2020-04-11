@@ -1,4 +1,4 @@
-
+// required dependencies
  const express = require("express");
  const app = express();
  const bodyParser = require("body-parser");
@@ -9,20 +9,22 @@
 
  app.use(bodyParser.urlencoded({extended: true}))
 
- app.use(express.static('/public'));
+ app.use(express.static("public"));
 
+//Home Route
  app.get("/", function(req, res){
      res.sendFile(__dirname + "/signup.html")
  })
 
+ //Post response
  app.post("/", function(req, res){
-
+// validation schema
     const schema = {
         fname: joi.string(),
         lname: joi.string(),
         email: joi.string().email({minDomainAtoms: 2})
     }
-
+// body parse validation
     const result = joi.validate({fname: req.body.fname, lname: req.body.lname, email: req.body.email}, schema);
 
     if(result.error){
@@ -33,6 +35,7 @@
         const lname = req.body.lname;
         const email = req.body.email;
 
+        // 
         const data = {
             members: [
                 {
@@ -73,6 +76,10 @@
     }
 
      
+ })
+
+ app.post("/fail", function(req, res){
+     res.redirect("/");
  })
 
  app.listen(port, function(){
